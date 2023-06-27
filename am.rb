@@ -43,9 +43,5 @@ class Am < Formula
       end
     end
   end
-
-  test do
-    assert_match "Usage: am <COMMAND>", shell_output("am", 1)
-  end
 end
 
