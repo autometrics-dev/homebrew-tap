@@ -12,7 +12,7 @@ class Am < Formula
       sha256 "1fb9c209902c732e4f4f1cd5e902f8b3a31e71a615c5fe1d3807a48fc4569b5d"
 
       def install
-        bin.install "am"
+        bin.install "am-macos-aarch64" => "am"
       end
     end
     if Hardware::CPU.intel?
@@ -20,7 +20,7 @@ class Am < Formula
       sha256 "cbbe9669971109d2d328db657018de2a7dcc9a3b64946a27e5502afc8d513192"
 
       def install
-        bin.install "am"
+        bin.install "am-macos-x86_64" => "am"
       end
     end
   end
@@ -31,7 +31,7 @@ class Am < Formula
       sha256 "b1834bfa313b7b5ca221939431bd26bc946f8b0b8fb31c521130b0523d6afa15"
 
       def install
-        bin.install "am"
+        bin.install "am-linux-x86_64" =>"am"
       end
     end
     if Hardware::CPU.arm?
@@ -39,7 +39,7 @@ class Am < Formula
       sha256 "217bd1fda9b0ea4e21f375d533479afbb6599505d705bbfabd984177b351b7de"
 
       def install
-        bin.install "am"
+        bin.install "am-linux-aarch64" => "am"
       end
     end
   end
