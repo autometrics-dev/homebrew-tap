@@ -1,0 +1,57 @@
+name: Homebrew update formula
+on:
+  workflow_dispatch:
+    inputs:
+      AM_VERSION:
+        required: true
+        description: "am release version (just numbers without the v, e.g.: 2.2.0)"
+        type: string
+      SHA256_AARCH64_APPLE_DARWIN:
+        required: true
+        description: "SHA256 for macOS arm64 binary"
+        type: string
+      SHA256_X86_64_APPLE_DARWIN:
+        required: true
+        description: "SHA256 for macOS x86 binary"
+        type: string
+      SHA256_X86_64_LINUX_GNU:
+        required: true
+        description: "SHA256 for Linux x86 binary"
+        type: string
+      SHA256_AARCH_64_LINUX_GNU:
+        required: true
+        description: "SHA256 for Linux x86 binary"
+        type: string
+    secrets:
+      PRIVATE_GITHUB_TOKEN:
+        required: true
+
+jobs:
+  homebrew:
+    name: Update Homebrew formula
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.PRIVATE_GITHUB_TOKEN }}
+
+      - name: Run update script
+        env:
+          AM_VERSION: ${{ inputs.AM_VERSION }}
+          SHA256_AARCH64_APPLE_DARWIN: ${{ inputs.SHA256_AARCH64_APPLE_DARWIN }}
+          SHA256_X86_64_APPLE_DARWIN: ${{ inputs.SHA256_X86_64_APPLE_DARWIN }}
+          SHA256_X86_64_LINUX_GNU: ${{ inputs.SHA256_X86_64_LINUX_GNU }}
+          SHA256_AARCH_64_LINUX_GNU: ${{ inputs.SHA256_AARCH_64_LINUX_GNU }}
+        run: ./update_homebrew_formula.sh
+        shell: bash
+
+      - name: Commit changed file
+        run: |
+          git config --global user.name "FiberBot"
+          git config --global user.email "fiberbot@users.noreply.github.com"
+          git add ./Formula/fp.rb
+          git commit -m "Updated homebrew formula for v${{ inputs.AM_VERSION }} release"
+          git push
+
