@@ -20,7 +20,7 @@ on:
         type: string
       SHA256_AARCH_64_LINUX_GNU:
         required: true
-        description: "SHA256 for Linux x86 binary"
+        description: "SHA256 for Linux arm64 binary"
         type: string
 
 jobs:
