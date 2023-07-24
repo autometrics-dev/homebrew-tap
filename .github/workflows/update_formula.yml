@@ -18,7 +18,7 @@ on:
         required: true
         description: "SHA256 for Linux x86 binary"
         type: string
-      SHA256_AARCH_64_LINUX_GNU:
+      SHA256_AARCH64_LINUX_GNU:
         required: true
         description: "SHA256 for Linux arm64 binary"
         type: string
@@ -27,11 +27,11 @@ jobs:
   homebrew:
     name: Update Homebrew formula
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Run update script
         env:
@@ -39,7 +39,7 @@ jobs:
           SHA256_AARCH64_APPLE_DARWIN: ${{ inputs.SHA256_AARCH64_APPLE_DARWIN }}
           SHA256_X86_64_APPLE_DARWIN: ${{ inputs.SHA256_X86_64_APPLE_DARWIN }}
           SHA256_X86_64_LINUX_GNU: ${{ inputs.SHA256_X86_64_LINUX_GNU }}
-          SHA256_AARCH_64_LINUX_GNU: ${{ inputs.SHA256_AARCH_64_LINUX_GNU }}
+          SHA256_AARCH64_LINUX_GNU: ${{ inputs.SHA256_AARCH64_LINUX_GNU }}
         run: ./update_homebrew_formula.sh
         shell: bash
 

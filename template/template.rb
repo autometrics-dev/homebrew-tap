@@ -37,7 +37,7 @@ class Am < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/autometrics-dev/am/releases/latest/download/am-linux-aarch64"
-      sha256 "${SHA256_AARCH_64_LINUX_GNU}"
+      sha256 "${SHA256_AARCH64_LINUX_GNU}"
 
       def install
         bin.install "am-linux-aarch64" => "am"
