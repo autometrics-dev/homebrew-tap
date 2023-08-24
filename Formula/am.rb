@@ -10,7 +10,7 @@ class Am < Formula
   on_macos do
     if Hardware::CPU.arm?
       url "https://github.com/autometrics-dev/am/releases/download/v0.3.0/am-macos-aarch64"
-      sha256 "466a797e6c03016b68484ee004984b283b84611744ccbf20117295a54060dd77"
+      sha256 "0c585b76a2be3dfe4dd73d195cc3d334d73091a0c4676e2f74d129a727a2320b"
 
       def install
         bin.install "am-macos-aarch64" => "am"
@@ -19,7 +19,7 @@ class Am < Formula
 
     if Hardware::CPU.intel?
       url "https://github.com/autometrics-dev/am/releases/download/v0.3.0/am-macos-x86_64"
-      sha256 "a0aa452d348955c01d89899d98145e83278d260cdd2e2c1ffe240292c39a4f45"
+      sha256 "27c3f125601da2e19506ffaa87064409cc749043cd7af862ec06d0772e22d24b"
 
       def install
         bin.install "am-macos-x86_64" => "am"
@@ -30,7 +30,7 @@ class Am < Formula
   on_linux do
     if Hardware::CPU.arm?
       url "https://github.com/autometrics-dev/am/releases/download/v0.3.0/am-linux-aarch64"
-      sha256 "b060a1bfe73055fae67969823dfe1fb192ed6d7af6bef630cae2bccdfd2b3bbd"
+      sha256 "d2fce026cb16ddc8e00ed968e43312d2057be57cdf0f595b8d40daeb908ade7d"
 
       def install
         bin.install "am-linux-aarch64" => "am"
@@ -39,7 +39,7 @@ class Am < Formula
 
     if Hardware::CPU.intel?
       url "https://github.com/autometrics-dev/am/releases/download/v0.3.0/am-linux-x86_64"
-      sha256 "ab7e4efb435d03c58578fb683c549bda48bf362b0aba87d8ff7f896d99527c2e"
+      sha256 "45a5cd7dd96cbaa1b969eae8b1b49d3bce94f600e9c71d8438ed6889902291e1"
 
       def install
         bin.install "am-linux-x86_64" =>"am"
