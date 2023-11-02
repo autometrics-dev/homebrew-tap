@@ -4,13 +4,13 @@ class Am < Formula
   homepage "https://autometrics.dev"
   url "https://github.com/autometrics-dev/am.git"
   head "https://github.com/autometrics-dev/am.git", branch: "main"
-  version "0.5.0"
+  version "0.6.0"
   license "Apache-2.0 or MIT"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/autometrics-dev/am/releases/download/v0.5.0/am-macos-aarch64"
-      sha256 "cbfca22c7feec1c8289fe8550eb1a8f6ff8d0960c749e5324f814ba15262e178"
+      url "https://github.com/autometrics-dev/am/releases/download/v0.6.0/am-macos-aarch64"
+      sha256 "23af16ece95b0c74edea5fc6a313443a07b27bd456ae6026d8ab81ba8bdc3b19"
 
       def install
         bin.install "am-macos-aarch64" => "am"
@@ -18,8 +18,8 @@ class Am < Formula
     end
 
     if Hardware::CPU.intel?
-      url "https://github.com/autometrics-dev/am/releases/download/v0.5.0/am-macos-x86_64"
-      sha256 "d604214289d420d0a36ee5c35198ce5bbf1411de74f0eba96ca695b58ecbba19"
+      url "https://github.com/autometrics-dev/am/releases/download/v0.6.0/am-macos-x86_64"
+      sha256 "c3404512217b34475959265511bef69dc9dc1b7f53b47dd1a3d752db29b59121"
 
       def install
         bin.install "am-macos-x86_64" => "am"
@@ -29,8 +29,8 @@ class Am < Formula
 
   on_linux do
     if Hardware::CPU.arm?
-      url "https://github.com/autometrics-dev/am/releases/download/v0.5.0/am-linux-aarch64"
-      sha256 "59c545d57b2526b45e542a2c1aea664d7f8328f95e4fc090cdb15bfc766adbb1"
+      url "https://github.com/autometrics-dev/am/releases/download/v0.6.0/am-linux-aarch64"
+      sha256 "a5f06092bb08522ebb557ae2cd15fa7615fc2704521a7187cde9a21af9bb725b"
 
       def install
         bin.install "am-linux-aarch64" => "am"
@@ -38,8 +38,8 @@ class Am < Formula
     end
 
     if Hardware::CPU.intel?
-      url "https://github.com/autometrics-dev/am/releases/download/v0.5.0/am-linux-x86_64"
-      sha256 "9b6b0d6b7fd6a9e9663ef8387fdccd6f6ba710ac1715fcc9b359ce0a7f23f651"
+      url "https://github.com/autometrics-dev/am/releases/download/v0.6.0/am-linux-x86_64"
+      sha256 "7bb821a3b2a5c075b236a92581a3993078fc4c7b3d5ed5d3ada7a150470ced52"
 
       def install
         bin.install "am-linux-x86_64" =>"am"
